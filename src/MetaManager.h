@@ -81,7 +81,7 @@ class MetaManager
 public:
 
 	template<class T> 
-	inline MetaInfo& RegisterObject()
+	MetaInfo& RegisterObject()
 	{
 		const std::type_info& t = typeid(T);
 		MetaObject key(t.name(), std::type_index(t));
@@ -96,7 +96,7 @@ public:
 	}
 
 	template<class T> 
-	inline void UnregisterObject()
+	void UnregisterObject()
 	{
 		const std::type_info& t = typeid(T);
 		MetaObject key(t.name(), std::type_index(t));
@@ -108,7 +108,7 @@ public:
 	}
 
 	template<class T> 
-	inline MetaInfo* GetMetaInfo()
+	MetaInfo* GetMetaInfo()
 	{
 		const std::type_info& t = typeid(T);
 		MetaObject key(t.name(), std::type_index(t));
